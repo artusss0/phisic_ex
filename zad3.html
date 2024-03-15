@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gra o fizyce | Zadanie 3</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="icon" href="atom.png">
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #text { margin-bottom: 20px; }
+        #quiz { margin-top: 20px; }
+        input[type="checkbox"] {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            color: #363839;
+            border: 1px solid #bdc1c6;
+        }
+        .sentence {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbuttons">
+        <button class="btn" onclick="refEx('zad2.html')">← Poprzednie zadanie</button>
+        <button id="btn-back" class="btn" onclick="returnToIndex()">Powrot na strone główną</button>
+        <button class="btn" onclick="refEx('zad4.html')">Następne zadanie →</button>
+    </div>
+    <div class="container">
+        <div id="text">
+            <h2>Wahadło</h2>
+            <p>
+                Wahadło to jedno z najprostszych i najbardziej podstawowych urządzeń fizycznych. 
+                Składa się z masywnego ciała zawieszonego na nieruchomym punkcie. 
+                Podczas ruchu wahadło przechodzi przez dwa skrajne punkty: 
+                punkt najwyższy, nazywany wierzchołkiem, i punkt najniższy, nazywany położeniem równowagi. 
+                Ważną cechą wahadła jest jego okres, czyli czas potrzebny na wykonanie pełnego cyklu ruchu, 
+                tj. przejście z punktu najwyższego do punktu najniższego i z powrotem. 
+                Okres wahadła zależy głównie od długości jego nici i prędkości początkowej.
+            </p> 
+        </div>
+        <form id="quiz">
+            <h2>Wybierz zdania, które pasują do tekstu:</h2>
+            <div class="sentence">
+                <input type="checkbox" id="statement1" name="statement1">
+                <label for="statement1">Okres wahadła zależy od jego masy.</label><br>
+            </div>
+            <div class="sentence">
+                <input type="checkbox" id="statement2" name="statement2">
+                <label for="statement2">Punktem najwyższym wahadła jest jego położenie równowagi.</label><br>
+            </div>
+            <div class="sentence">
+                <input type="checkbox" id="statement3" name="statement3">
+                <label for="statement3">Długość nici wahadła nie ma wpływu na jego okres.</label><br>    
+            </div>
+            <div class="sentence">
+                <input type="checkbox" id="statement4" name="statement4">
+                <label for="statement4">Wahadło ma dwa skrajne punkty: wierzchołek i położenie równowagi.</label><br>
+            </div>
+            <div class="sentence">
+                <input type="checkbox" id="statement5" name="statement5">
+                <label for="statement5">Im dłuższa nici wahadła, tym krótszy jego okres.</label><br>
+            </div><br>
+            <button type="button" class="btn" id="submit-btn">Sprawdź odpowiedzi</button>
+            <button class="btn" onclick="reset()">Reset zadania</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('submit-btn').addEventListener('click', function() {
+            var statements = [];
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(function(checkbox) {
+                if (checkbox.checked) {
+                    statements.push(checkbox.id);
+                }
+            });
+
+            var correctAnswers = ['statement1', 'statement3', 'statement5'];
+            var correctCount = 0;
+            statements.forEach(function(statement) {
+                if (correctAnswers.includes(statement)) {
+                    correctCount++;
+                } else { if(correctCount > 0) { correctCount-- }}
+            });
+
+            var resultText = "Twój wynik: " + correctCount + "/" + correctAnswers.length;
+            alert(resultText);
+        });
+        function reset() { window.location.href = "zad3.html"; }
+        function returnToIndex() { window.location.href = "index.html"; }
+        function refEx(ex) { window.location.href = ex; }
+
+    </script>
+</body>
+</html>

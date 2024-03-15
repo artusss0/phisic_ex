@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gra o fizyce | Strona główna</title>
+    <link rel="icon" href="atom.png">
+    <link rel="stylesheet" href="base.css">
+    <style>
+        .zadania {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .zadanie {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            line-height: 0.5;
+        }
+
+        .zadanie a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .opis {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="zadania">
+        <div class="zadanie">
+            <h2>Zadanie 1</h2>
+            <p class="opis">Zaznaczaj poprawne odpowiedzi i sprawdź swój wynik na końcu</p>
+            <button class="btn" onclick="refEx('zad1.html')">Wykonaj zadanie</button>
+        </div>
+        <div class="zadanie">
+            <h2>Zadanie 2</h2>
+            <p class="opis">Dopisz brakujące wyrazy w tekście i sprawdź czy są poprawnie dodane</p>
+            <button class="btn" onclick="refEx('zad2.html')">Wykonaj zadanie</button>
+        </div>
+        <div class="zadanie">
+            <h2>Zadanie 3</h2>
+            <p class="opis">Przeczytaj tekst i zaznacz zdania które do niego pasują </p>
+            <button class="btn" onclick="refEx('zad3.html')">Wykonaj zadanie</button>
+        </div>
+        <div class="zadanie">
+            <h2>Zadanie 4</h2>
+            <p class="opis">Oceń prawdziwość podanych zdań</p>
+            <button class="btn" onclick="refEx('zad4.html')">Wykonaj zadanie</button>
+        </div>
+    </div>
+    <script>
+        function refEx(ex) { window.location.href = ex; }
+    </script>
+</body>
+</html>
