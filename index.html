@@ -5,7 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gra o fizyce | Strona główna</title>
     <link rel="icon" href="atom.png">
-    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="base.css">
+    <style>
+        .zadania {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .zadanie {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            line-height: 1;
+        }
+
+        .zadanie a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .opis {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
     <div class="zadania">
@@ -30,6 +59,8 @@
             <button class="btn" onclick="refEx('zad4.html')">Wykonaj zadanie</button>
         </div>
     </div>
-    <script src="js/index.js"></script>
+    <script>
+        function refEx(ex) { window.location.href = ex; }
+    </script>
 </body>
 </html>

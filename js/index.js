@@ -1,1 +1,0 @@
-function refEx(ex) { window.location.href = ex; }
