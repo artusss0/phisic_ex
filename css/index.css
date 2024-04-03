@@ -1,0 +1,27 @@
+.zadania {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.zadanie {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    line-height: 1;
+}
+
+.zadanie a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.opis {
+    font-size: 14px;
+    color: #666;
+}
